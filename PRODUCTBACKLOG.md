@@ -49,3 +49,9 @@ The population of people, people living in cities, and people not living in citi
 The population of people, people living in cities, and people not living in cities in each region.
 
 The population of people, people living in cities, and people not living in cities in each country
+
+Country Report
+
+City Report
+
+Capital City Report
