@@ -5,7 +5,6 @@ Review 1
 
 | Tasks                                                                                                 | Status |
 |-------------------------------------------------------------------------------------------------------|--------|
-|
 | GitHub project for coursework set-up.                                                                 | Done   |
 | Product Backlog created.                                                                              | Done   |
 | Project builds to self-contained JAR with Maven.                                                      | Fixed  |
@@ -21,8 +20,7 @@ Review 2
 
 | Tasks                            | Status |
 |----------------------------------|--------|
-|
-| Issues being used on GitHub.     |        |
+| Issues being used on GitHub.     | Done   |
 | Tasks defined as user stories.   |        |
 | Project integrated with Zube.io. |        |
 | Kanban/Project Board being used. |        |
