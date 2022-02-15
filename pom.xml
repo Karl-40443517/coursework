@@ -8,11 +8,13 @@
     <artifactId>group-project</artifactId>
     <version>0.1</version>
 
+    <!--sets version propeties of maven-->
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <!--builds self-contained jar-->
     <build>
         <plugins>
             <plugin>
