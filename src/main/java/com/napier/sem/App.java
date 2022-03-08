@@ -6,27 +6,25 @@ public class App
 {
     public static void main(String[] args)
     {
-
+        //Sets the user defined n
+        int n = 10;
         // Create new Application
         App a = new App();
-
         // Connect to database
         a.connect();
-        // Get Employee
-        City city = a.getCity(8);
-        // Display results
-        a.displayCity(city);
+
+        // Calls example method
+        a.exampleMethod(n);
+
+
 
         // Disconnect from database
         a.disconnect();
     }
 
 
-
-
-
-    public City getCity(int ID)
-    {
+    //Prints the country that has the ID that matches n
+    void exampleMethod(int ID) {
         try
         {
             // Create an SQL statement
@@ -43,44 +41,28 @@ public class App
             if (rset.next())
             {
                 City city = new City();
-                city.ID_key = rset.getInt("ID");
-                city.Name = rset.getString("Name");
-                city.CountryCode = rset.getString("CountryCode");
-                city.District = rset.getString("District");
-                city.Population = rset.getInt("Population");
-                return city;
+                city.id = rset.getInt("ID");
+                city.name = rset.getString("Name");
+                city.countryCode = rset.getString("CountryCode");
+                city.district = rset.getString("District");
+                city.population = rset.getInt("Population");
+
+                System.out.println(city.name + ", " + city.countryCode + ", " + city.district + ", " + city.population + "\n");
             }
-            else
-                return null;
         }
         catch (Exception e)
         {
             System.out.println(e.getMessage());
             System.out.println("Failed to get City details");
-            return null;
-        }
-    }
-
-    public void displayCity(City city)
-    {
-        if (city != null)
-        {
-            System.out.println(city.Name + ", " + city.CountryCode + ", " + city.District + ", " + city.Population + "\n");
         }
     }
 
 
 
-
-
-    /**
-     * Connection to MySQL database.
-     */
+    //Connection to MySQL database.
     private Connection con = null;
 
-    /**
-     * Connect to the MySQL database.
-     */
+    //Connect to the MySQL database.
     public void connect()
     {
         try
@@ -118,10 +100,7 @@ public class App
             }
         }
     }
-
-    /**
-     * Disconnect from the MySQL database.
-     */
+    //Disconnect from the MySQL database.
     public void disconnect()
     {
         if (con != null)

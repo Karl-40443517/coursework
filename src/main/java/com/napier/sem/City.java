@@ -1,18 +1,17 @@
 package com.napier.sem;
 
-import java.sql.*;
-
+//City class used to create an instance of a City
 public class City {
 
-    public int ID_key;
+    public int id;
 
-    public String Name;
+    public String name;
 
-    public String CountryCode;
+    public String countryCode;
 
-    public String District;
+    public String district;
 
-    public int Population;
+    public int population;
 
 
 }
