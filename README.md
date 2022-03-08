@@ -24,7 +24,7 @@ Review 2
 |----------------------------------|--------|
 | Issues being used on GitHub.     | Done   |
 | Tasks defined as user stories.   |        |
-| Project integrated with Zube.io. |        |
+| Project integrated with Zube.io. | Done   |
 | Kanban/Project Board being used. |        |
 | Sprint Boards being used.        |        |
 | Full use cases defined.          |        |
