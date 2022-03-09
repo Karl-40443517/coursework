@@ -1,31 +1,31 @@
 ## LIST OF ALL FUNCTIONALITY TO BE ADDED:
 
 
-**Countries In order of largest to smallest population:**
+**In order of largest to smallest population:**
 - world
 - a continent
 - a region
 
-**Top N populated countries:**
+**Top N populated locations:**
 - world
 - a continent
 - a region
 
-**Cities In order of largest to smallest population:**
-- world
-- a continent
-- a region
-- a Country
-- a District
-
-**Top N populated cities:**
+**In order of largest to smallest population:**
 - world
 - a continent
 - a region
 - a Country
 - a District
 
-**Capital cities in order of largest population to smallest:**
+**Top N populated locations:**
+- world
+- a continent
+- a region
+- a Country
+- a District
+
+**Cities in order of largest population to smallest:**
 - world
 - a continent
 - a region
