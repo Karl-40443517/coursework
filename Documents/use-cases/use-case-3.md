@@ -1,15 +1,16 @@
-# USE CASE: 3 Produce a Language Report Based on the Most Spoken Languages
+# USE CASE: 3. (City Report) City Populations
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As a language analyst, I can access information regarding languages spoken by a percentage
-of the population in order to create accurate information about commonly spoken languages
-in the world.
+As an organisation we need the cities In order of largest to smallest population for the following locations:
+
+world, a continent, a region, a Country, a District
+
 ### Scope
 
-Analysis 
+Organisation
 
 ### Level
 
@@ -17,11 +18,11 @@ Primary task.
 
 ### Preconditions
 
-World database includes Language,country and city data
+World database 
 
 ### Success End Condition
 
-A report is produced for the user.
+A report is produced for the organisation.
 
 ### Failed End Condition
 
@@ -33,22 +34,28 @@ User
 
 ### Trigger
 
-A request for language report of the world
+A request for a City Report
 
 ## MAIN SUCCESS SCENARIO
 
-1. User requests language report
-2. User captures information from countries
-3. User extracts language data.
-4. User is provided the language report assisting with their analysis.
+1. User requests City Report
+2. User captures information on the Cities
+3. User extracts the relevant data 
+4. User is provided the City report for the organisation.
 
 ## EXTENSIONS
 
-None.
+None
 
 ## SUB-VARIATIONS
 
-None.
+Continent does not exist: User is informed that the continent does not exist in the database.
+
+Region does not exist: User is informed that the Region does not exist in the database.
+
+Country does not exist: User is informed that the Country does not exist in the database.
+
+District does not exist: User is informed that the District does not exist in the database.
 
 ## SCHEDULE
 

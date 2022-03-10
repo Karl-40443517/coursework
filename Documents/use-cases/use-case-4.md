@@ -1,15 +1,16 @@
-# USE CASE: 4 Produce Cities Report
+# USE CASE: 4. (City Report) Top N Highest Populated Cities
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As someone who will be looking at large amounts of data, I can access summaries and reports
-on each city or capital city in order to view information in a concise, brief format.
+As an organisation we need the top N populated cities for the following locations:
+
+world, a continent, a region, a Country, a District
 
 ### Scope
 
- 
+Organisation
 
 ### Level
 
@@ -17,11 +18,11 @@ Primary task.
 
 ### Preconditions
 
-World database includes country and city data
+World database 
 
 ### Success End Condition
 
-A report is produced for the user.
+A report is produced for the organisation.
 
 ### Failed End Condition
 
@@ -33,22 +34,28 @@ User
 
 ### Trigger
 
-A request for City report 
+A request for a City Report
 
 ## MAIN SUCCESS SCENARIO
 
-1. User requests City report
-2. User captures information from all cities
-3. User extracts city data.
-4. User is provided the City report .
+1. User requests City Report
+2. User captures information on the top N populated Cities
+3. User extracts the relevant data 
+4. User is provided the City report for the organisation.
 
 ## EXTENSIONS
 
-None.
+None
 
 ## SUB-VARIATIONS
 
-None.
+Continent does not exist: User is informed that the continent does not exist in the database.
+
+Region does not exist: User is informed that the Region does not exist in the database.
+
+Country does not exist: User is informed that the Country does not exist in the database.
+
+District does not exist: User is informed that the District does not exist in the database.
 
 ## SCHEDULE
 

@@ -1,14 +1,12 @@
-# USE CASE: 1. (Country Report) Country Populations
+# USE CASE: 7. (Population Report) City & non City Populations
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As an organisation we need the countries In order of largest to smallest population for the following locations:
+As an organisation we need the population of people, people living in cities, and people not living in cities for the following locations:
 
-world, 
-a continent, 
-a region
+world, a continent, a region
 
 ### Scope
 
@@ -36,14 +34,14 @@ User
 
 ### Trigger
 
-A request for a Country Report
+A request for a Population Report
 
 ## MAIN SUCCESS SCENARIO
 
-1. User requests Country Report
-2. User captures information on the Countries
+1. User requests Population Report
+2. User captures information on the Population and City/Non City Population
 3. User extracts the relevant data 
-4. User is provided the Country report for the organisation.
+4. User is provided the Population report for the organisation.
 
 ## EXTENSIONS
 
@@ -54,6 +52,7 @@ None
 Continent does not exist: User is informed that the continent does not exist in the database.
 
 Region does not exist: User is informed that the Region does not exist in the database.
+
 
 ## SCHEDULE
 

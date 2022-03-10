@@ -23,10 +23,10 @@ Review 2
 | Tasks                            | Status |
 |----------------------------------|--------|
 | Issues being used on GitHub.     | Done   |
-| Tasks defined as user stories.   |        |
+| Tasks defined as user stories.   | Done   |
 | Project integrated with Zube.io. | Done   |
-| Kanban/Project Board being used. |        |
+| Kanban/Project Board being used. | Done   |
 | Sprint Boards being used.        |        |
-| Full use cases defined.          |        |
-| Use case diagram created.        |        |
-| Graded submission.               |        |
+| Full use cases defined.          | Done   |
+| Use case diagram created.        | Done   |
+| Graded submission.               | Done   |

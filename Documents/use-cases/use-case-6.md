@@ -1,15 +1,16 @@
-# USE CASE: 6 Produce Country Report
+# USE CASE: 6. (Capital City Report) Top N Highest Populated Capital Cities
 
 ## CHARACTERISTIC INFORMATION
 
 ### Goal in Context
 
-As someone analyses country data, I can utilise input fields so that I can quickly locate the
-data which I am looking for and is relevant to my search.
+As an organisation we need the top N populated capital cities for the following locations:
+
+world, a continent, a region
 
 ### Scope
 
-Analysis
+Organisation
 
 ### Level
 
@@ -17,11 +18,11 @@ Primary task.
 
 ### Preconditions
 
-World database includes country data
+World database 
 
 ### Success End Condition
 
-A report is produced for the user.
+A report is produced for the organisation.
 
 ### Failed End Condition
 
@@ -33,23 +34,25 @@ User
 
 ### Trigger
 
-A request for Country report 
+A request for a Capital City Report
 
 ## MAIN SUCCESS SCENARIO
 
-1. User requests Country report
-2. User captures information from countries based on input fields
-3. User extracts Country data.
-4. User is provided the Country report for analysis.
+1. User requests Capital City Report
+2. User captures information on the top N populated Capital Cities
+3. User extracts the relevant data 
+4. User is provided the Capital City report for the organisation.
 
 ## EXTENSIONS
 
-None.
+None
 
 ## SUB-VARIATIONS
 
-1**Country does not exist**:
-1. User is informed that the country does not exist in the database.
+Continent does not exist: User is informed that the continent does not exist in the database.
+
+Region does not exist: User is informed that the Region does not exist in the database.
+
 
 ## SCHEDULE
 
