@@ -40,6 +40,7 @@ public class App
             // Check one is returned
             if (rset.next())
             {
+                //object creation Not needed in this example
                 City city = new City();
                 city.id = rset.getInt("ID");
                 city.name = rset.getString("Name");
@@ -47,6 +48,7 @@ public class App
                 city.district = rset.getString("District");
                 city.population = rset.getInt("Population");
 
+                //Outputs result of query
                 System.out.println(city.name + ", " + city.countryCode + ", " + city.district + ", " + city.population + "\n");
             }
         }

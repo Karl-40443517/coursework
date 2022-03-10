@@ -26,7 +26,7 @@ Review 2
 | Tasks defined as user stories.   | Done   |
 | Project integrated with Zube.io. | Done   |
 | Kanban/Project Board being used. | Done   |
-| Sprint Boards being used.        |        |
+| Sprint Boards being used.        | Done   |
 | Full use cases defined.          | Done   |
 | Use case diagram created.        | Done   |
 | Graded submission.               | Done   |
