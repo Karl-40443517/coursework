@@ -49,6 +49,7 @@ public class App
                 city.population = rset.getInt("Population");
 
                 //Outputs result of query
+                System.out.println("(Example Query) Country with an ID of " + ID + ":");
                 System.out.println(city.name + ", " + city.countryCode + ", " + city.district + ", " + city.population + "\n");
             }
         }
