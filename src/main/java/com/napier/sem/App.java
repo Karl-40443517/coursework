@@ -58,8 +58,35 @@ public class App
             System.out.println("Failed to get City details");
         }
     }
+    
+    //Prints the top N populated countries from specified location
+    void topNPopulatedLocations(int n, String loc) {
 
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
 
+            String strSelect = "";
+            
+            //if location set to world
+            if (loc == "world") {
+                strSelect =
+                        "SELECT ID, Name, Population "
+                                + "FROM country "
+                                + "ORDER BY Population "
+                                + "LIMIT " + n;
+            }
+            
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get City details");
+        }
+
+    }
 
     //Connection to MySQL database.
     private Connection con = null;
