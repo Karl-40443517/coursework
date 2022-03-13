@@ -1,5 +1,6 @@
 package com.napier.sem;
 
+import javax.xml.transform.Result;
 import java.sql.*;
 
 public class App
@@ -8,20 +9,21 @@ public class App
     {
         //Sets the user defined n
         int n = 10;
+        String loc = "world";
         // Create new Application
         App a = new App();
         // Connect to database
         a.connect();
 
         // Calls example method
-        a.exampleMethod(n);
+        //a.exampleMethod(n);
+        a.descendingWorldPop();
 
 
 
         // Disconnect from database
         a.disconnect();
     }
-
 
     //Prints the country that has the ID that matches n
     void exampleMethod(int ID) {
@@ -144,6 +146,42 @@ public class App
             {
                 System.out.println("Error closing connection to database");
             }
+        }
+    }
+
+    void descendingWorldPop() {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT Name, Population "
+                            + "FROM country "
+                            + "ORDER BY Population DESC";
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Return new employee if valid.
+            // Check one is returned
+            System.out.println("Descending order of country populations by World");
+            while (rset.next())
+            {
+                //object creation Not needed in this example
+                Country country = new Country();
+                country.name = rset.getString("Name");
+                country.population = rset.getInt("Population");
+
+
+                //Outputs result of query
+
+                System.out.println(country.name + "," + country.population + "\n");
+
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get Country details");
         }
     }
 }
