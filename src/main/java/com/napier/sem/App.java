@@ -10,6 +10,7 @@ public class App
         //Sets the user defined n
         int n = 10;
         String loc = "world";
+        String continent = "Asia";
         // Create new Application
         App a = new App();
         // Connect to database
@@ -18,6 +19,7 @@ public class App
         // Calls example method
         //a.exampleMethod(n);
         a.descendingWorldPop();
+        a.descendingContinentPop(continent);
 
 
 
@@ -184,4 +186,44 @@ public class App
             System.out.println("Failed to get Country details");
         }
     }
+
+    void descendingContinentPop(String continent) {
+        try
+        {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT Name,Continent, Population "
+                            + "FROM country "
+                            + "WHERE Continent = " + "'"+continent+"'"
+                            + "ORDER BY Population DESC";
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Return new employee if valid.
+            // Check one is returned
+            System.out.println("Descending order of country populations in " + continent);
+            while (rset.next())
+            {
+                //object creation Not needed in this example
+                Country country = new Country();
+                country.name = rset.getString("Name");
+                country.continent = rset.getString("Continent");
+                country.population = rset.getInt("Population");
+
+
+                //Outputs result of query
+
+                System.out.println(country.name + "," + country.continent + "," + country.population + "\n");
+
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get "+ continent + " details");
+        }
+    }
 }
+
