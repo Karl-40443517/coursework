@@ -3,14 +3,13 @@ package com.napier.sem;
 import javax.xml.transform.Result;
 import java.sql.*;
 
-public class App
-{
-    public static void main(String[] args)
-    {
+public class App {
+    public static void main(String[] args) {
         //Sets the user defined n
         int n = 10;
         String loc = "world";
         String continent = "Asia";
+        String region = "Middle East";
         // Create new Application
         App a = new App();
         // Connect to database
@@ -20,7 +19,7 @@ public class App
         //a.exampleMethod(n);
         a.descendingWorldPop();
         a.descendingContinentPop(continent);
-
+        a.descendingRegionPop(region);
 
 
         // Disconnect from database
@@ -29,8 +28,7 @@ public class App
 
     //Prints the country that has the ID that matches n
     void exampleMethod(int ID) {
-        try
-        {
+        try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
@@ -42,8 +40,7 @@ public class App
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new employee if valid.
             // Check one is returned
-            if (rset.next())
-            {
+            if (rset.next()) {
                 //object creation Not needed in this example
                 City city = new City();
                 city.id = rset.getInt("ID");
@@ -56,14 +53,12 @@ public class App
                 System.out.println("(Example Query) Country with an ID of " + ID + ":");
                 System.out.println(city.name + ", " + city.countryCode + ", " + city.district + ", " + city.population + "\n");
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get City details");
         }
     }
-    
+
     //Prints the top N populated countries from specified location
     void topNPopulatedLocations(int n, String loc) {
 
@@ -72,7 +67,7 @@ public class App
             Statement stmt = con.createStatement();
 
             String strSelect = "";
-            
+
             //if location set to world
             if (loc == "world") {
                 strSelect =
@@ -81,12 +76,10 @@ public class App
                                 + "ORDER BY Population "
                                 + "LIMIT " + n;
             }
-            
+
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get City details");
         }
@@ -97,63 +90,48 @@ public class App
     private Connection con = null;
 
     //Connect to the MySQL database.
-    public void connect()
-    {
-        try
-        {
+    public void connect() {
+        try {
             // Load Database driver
             Class.forName("com.mysql.cj.jdbc.Driver");
-        }
-        catch (ClassNotFoundException e)
-        {
+        } catch (ClassNotFoundException e) {
             System.out.println("Could not load SQL driver");
             System.exit(-1);
         }
 
         int retries = 10;
-        for (int i = 0; i < retries; ++i)
-        {
+        for (int i = 0; i < retries; ++i) {
             System.out.println("Connecting to database...");
-            try
-            {
+            try {
                 // Wait a bit for db to start
                 Thread.sleep(30000);
                 // Connect to database
                 con = DriverManager.getConnection("jdbc:mysql://db:3306/world?useSSL=false", "root", "example");
                 System.out.println("Successfully connected");
                 break;
-            }
-            catch (SQLException sqle)
-            {
+            } catch (SQLException sqle) {
                 System.out.println("Failed to connect to database attempt " + Integer.toString(i));
                 System.out.println(sqle.getMessage());
-            }
-            catch (InterruptedException ie)
-            {
+            } catch (InterruptedException ie) {
                 System.out.println("Thread interrupted? Should not happen.");
             }
         }
     }
+
     //Disconnect from the MySQL database.
-    public void disconnect()
-    {
-        if (con != null)
-        {
-            try
-            {
+    public void disconnect() {
+        if (con != null) {
+            try {
                 // Close connection
                 con.close();
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 System.out.println("Error closing connection to database");
             }
         }
     }
 
     void descendingWorldPop() {
-        try
-        {
+        try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
@@ -166,8 +144,7 @@ public class App
             // Return new employee if valid.
             // Check one is returned
             System.out.println("Descending order of country populations by World");
-            while (rset.next())
-            {
+            while (rset.next()) {
                 //object creation Not needed in this example
                 Country country = new Country();
                 country.name = rset.getString("Name");
@@ -179,24 +156,21 @@ public class App
                 System.out.println(country.name + "," + country.population + "\n");
 
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             System.out.println("Failed to get Country details");
         }
     }
 
     void descendingContinentPop(String continent) {
-        try
-        {
+        try {
             // Create an SQL statement
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
                     "SELECT Name,Continent, Population "
                             + "FROM country "
-                            + "WHERE Continent = " + "'"+continent+"'"
+                            + "WHERE Continent = " + "'" + continent + "'"
                             + "ORDER BY Population DESC";
 
             // Execute SQL statement
@@ -204,8 +178,7 @@ public class App
             // Return new employee if valid.
             // Check one is returned
             System.out.println("Descending order of country populations in " + continent);
-            while (rset.next())
-            {
+            while (rset.next()) {
                 //object creation Not needed in this example
                 Country country = new Country();
                 country.name = rset.getString("Name");
@@ -218,12 +191,46 @@ public class App
                 System.out.println(country.name + "," + country.continent + "," + country.population + "\n");
 
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
-            System.out.println("Failed to get "+ continent + " details");
+            System.out.println("Failed to get " + continent + " details");
+        }
+    }
+
+    void descendingRegionPop(String region) {
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            // Create string for SQL statement
+            String strSelect =
+                    "SELECT Name,Region, Population "
+                            + "FROM country "
+                            + "WHERE Region = " + "'" + region + "'"
+                            + "ORDER BY Population DESC";
+
+            // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+            // Return new employee if valid.
+            // Check one is returned
+            System.out.println("Descending order of country populations in " + region);
+            while (rset.next()) {
+                //object creation Not needed in this example
+                Country country = new Country();
+                country.name = rset.getString("Name");
+                country.region = rset.getString("Region");
+                country.population = rset.getInt("Population");
+
+
+                //Outputs result of query
+
+                System.out.println(country.name + "," + country.region + "," + country.population + "\n");
+
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.out.println("Failed to get " + region + " details");
         }
     }
 }
+
 
