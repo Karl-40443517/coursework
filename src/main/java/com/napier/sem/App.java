@@ -88,6 +88,50 @@ public class App
         }
 
     }
+    
+    //Prints all the countries ordered by descending population
+    void listPopulations(int n, String loc) {
+
+        try {
+            // Create an SQL statement
+            Statement stmt = con.createStatement();
+            String strSelect = "";
+            
+            //if "world" is chosen
+            if (loc == "world") {
+                strSelect =
+                      "SELECT ID, Name, Population "
+                            + "FROM country "
+                            + "ORDER BY Population "   
+                }
+            
+            //if "continent" is chosen
+            elif (loc == "continent") {
+                strSelect =
+                    "SELECT ID, Name, Population "
+                        + "FROM country "
+                        + "GROUP BY Continent "
+                }
+            
+            //if "region" is chosen
+            elif (loc == "region") {
+                strSelect =
+                    "SELECT ID, Name, Population "
+                        + "FROM country "
+                        + "GROUP BY Region "
+                }
+            
+        // Execute SQL statement
+            ResultSet rset = stmt.executeQuery(strSelect);
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+            System.out.println("Couldn't get population information");
+        }
+    }
+            
+            
 
     //Connection to MySQL database.
     private Connection con = null;
