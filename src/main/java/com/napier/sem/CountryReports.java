@@ -4,11 +4,9 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class CountryReports_Population {
+public class CountryReports {
     public Connection con = null;
 
-    public CountryReports_Population() {
-    }
 
     void setConnection(Connection con) {
         this.con = con;
@@ -29,6 +27,25 @@ public class CountryReports_Population {
     void countryPopulationsForAContinent(String continent) {
         String strSelect = "SELECT Code, Name, Continent, Region, Population, Capital FROM country WHERE Continent = '" + continent + "' ORDER BY Population DESC";
         System.out.println("\nCountries In order of largest to smallest population in the continent of " + continent + ":");
+        this.produceReport(strSelect);
+    }
+
+
+    void topNCountryPopulationsForWorld(int n) {
+        String strSelect = "SELECT Code, Name, Continent, Region, Population, Capital FROM country ORDER BY Population DESC LIMIT " + n;
+        System.out.println("\nTop " + n + " countries In order of largest to smallest population in the world:");
+        this.produceReport(strSelect);
+    }
+
+    void topNCountryPopulationsForARegion(int n, String region) {
+        String strSelect = "SELECT Code, Name, Continent, Region, Population, Capital FROM country WHERE Region = '" + region + "' ORDER BY Population DESC LIMIT " + n;
+        System.out.println("\nTop " + n + " countries In order of largest to smallest population in the region of " + region + ":");
+        this.produceReport(strSelect);
+    }
+
+    void topNCountryPopulationsForAContinent(int n, String continent) {
+        String strSelect = "SELECT Code, Name, Continent, Region, Population, Capital FROM country WHERE Continent = '" + continent + "' ORDER BY Population DESC LIMIT " + n;
+        System.out.println("\nTop " + n + " Countries In order of largest to smallest population in the continent of " + continent + ":");
         this.produceReport(strSelect);
     }
 

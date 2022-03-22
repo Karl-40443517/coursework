@@ -8,15 +8,20 @@ public class App {
 
     public static void main(String[] args) {
 
-        int n = 10;
+        int n = 5;
         App a = new App();
         a.connect();
 
-        CountryReports_Population b = new CountryReports_Population();
-        b.setConnection(a.con);
-        b.countryPopulationsForWorld();
-        b.countryPopulationsForARegion("Central Africa");
-        b.countryPopulationsForAContinent("Africa");
+        CountryReports CR = new CountryReports();
+        CR.setConnection(a.con);
+
+        CR.countryPopulationsForWorld();
+        CR.countryPopulationsForARegion("Central Africa");
+        CR.countryPopulationsForAContinent("Africa");
+
+        CR.topNCountryPopulationsForWorld(n);
+        CR.topNCountryPopulationsForARegion(n,"Central Africa");
+        CR.topNCountryPopulationsForAContinent(n, "Africa");
 
         a.disconnect();
     }
