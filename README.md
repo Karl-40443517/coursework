@@ -38,5 +38,5 @@ Review 3
 |-------------------------------------|--------|
 | Suitable unit tests defined.        |        |
 | Suitable integration tests defined. |        |
-| Tests running on GitHub Actions.    |        |
+| Tests running on GitHub Actions.    | Done   |
 | Graded submission.                  |        |

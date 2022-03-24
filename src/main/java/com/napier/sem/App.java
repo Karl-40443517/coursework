@@ -11,40 +11,30 @@ public class App {
         int n = 5;
         App a = new App();
 
-        if(args.length < 1){
+        //attempts to connect application to the world database
+        if(args.length < 1)
             a.connect("localhost:33060", 30000);
-        }else{
+        else
             a.connect(args[0], Integer.parseInt(args[1]));
-        }
 
+        //Creates CountryReports objects and connects it to the world database
         CountryReports CR = new CountryReports();
         CR.setConnection(a.con);
 
+        //Countries In order of largest to smallest population for the following locations: world, a continent , a region
+        //https://github.com/Karl-40443517/coursework/issues/5
         CR.countryPopulationsForWorld();
-        CR.countryPopulationsForARegion("Central Africa");
         CR.countryPopulationsForAContinent("Africa");
+        CR.countryPopulationsForARegion("Central Africa");
 
+        //Top N populated countries for the following locations: world, a continent , a region
+        //https://github.com/Karl-40443517/coursework/issues/4
         CR.topNCountryPopulationsForWorld(n);
-        CR.topNCountryPopulationsForARegion(n,"Central Africa");
         CR.topNCountryPopulationsForAContinent(n, "Africa");
+        CR.topNCountryPopulationsForARegion(n,"Central Africa");
 
+        //disconnects application from world database
         a.disconnect();
-    }
-
-    void topNPopulatedLocations(int n, String loc) {
-        try {
-            Statement stmt = this.con.createStatement();
-            String strSelect = "";
-            if (loc == "world") {
-                strSelect = "SELECT ID, Name, Population FROM country ORDER BY Population LIMIT " + n;
-            }
-
-            stmt.executeQuery(strSelect);
-        } catch (Exception var6) {
-            System.out.println(var6.getMessage());
-            System.out.println("Failed to get City details");
-        }
-
     }
 
 
@@ -78,6 +68,7 @@ public class App {
         }
     }
 
+
     public void disconnect() {
         if (this.con != null) {
             try {
@@ -86,6 +77,6 @@ public class App {
                 System.out.println("Error closing connection to database");
             }
         }
-
     }
+
 }
