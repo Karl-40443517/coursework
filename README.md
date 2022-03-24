@@ -30,3 +30,13 @@ Review 2
 | Full use cases defined.          | Done   |
 | Use case diagram created.        | Done   |
 | Graded submission.               | Done   |
+
+<br/>
+Review 3
+
+| Tasks                               | Status |
+|-------------------------------------|--------|
+| Suitable unit tests defined.        |        |
+| Suitable integration tests defined. |        |
+| Tests running on GitHub Actions.    |        |
+| Graded submission.                  |        |

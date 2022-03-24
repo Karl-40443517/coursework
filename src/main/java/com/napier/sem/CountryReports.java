@@ -7,7 +7,6 @@ import java.sql.Statement;
 public class CountryReports {
     public Connection con = null;
 
-
     void setConnection(Connection con) {
         this.con = con;
     }
