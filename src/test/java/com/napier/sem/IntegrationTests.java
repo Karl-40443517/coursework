@@ -23,8 +23,41 @@ public class IntegrationTests
     }
 
     @Test
-    void testGetEmployee()
+    void testCountryReportInvalidContinent()
     {
-        CR.topNCountryPopulationsForWorld(20);
+        CR.countryPopulationsForAContinent("Africccca");
     }
+
+    @Test
+    void testCountryReportInvalidRegion()
+    {
+        CR.countryPopulationsForARegion("Central Africaaaa");
+    }
+
+    @Test
+    void testTopNCountryReportInvalidContinent()
+    {
+        CR.countryPopulationsForAContinent("Africccca");
+    }
+
+    @Test
+    void testTopNCountryReportInvalidRegion()
+    {
+        CR.countryPopulationsForARegion("Central Africaaaa");
+    }
+
+    @Test
+    void testCountryReportContinentNegativeN()
+    {
+        CR.topNCountryPopulationsForAContinent(a.validateN(-10), "Africa");
+    }
+
+    @Test
+    void testCountryReportRegionNegativeN()
+    {
+        CR.topNCountryPopulationsForARegion(a.validateN(-10),"Central Africa");
+    }
+
+
+
 }

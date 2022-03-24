@@ -29,9 +29,9 @@ public class App {
 
         //Top N populated countries for the following locations: world, a continent , a region
         //https://github.com/Karl-40443517/coursework/issues/4
-        CR.topNCountryPopulationsForWorld(n);
-        CR.topNCountryPopulationsForAContinent(n, "Africa");
-        CR.topNCountryPopulationsForARegion(n,"Central Africa");
+        CR.topNCountryPopulationsForWorld(a.validateN(n));
+        CR.topNCountryPopulationsForAContinent(a.validateN(n), "Africa");
+        CR.topNCountryPopulationsForARegion(a.validateN(n),"Central Africa");
 
         //disconnects application from world database
         a.disconnect();
@@ -78,5 +78,11 @@ public class App {
             }
         }
     }
+
+    public int validateN(int n) {
+        if (n < 0) n *= -1;
+        return n;
+    }
+
 
 }
