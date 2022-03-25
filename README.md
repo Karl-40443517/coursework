@@ -38,7 +38,7 @@ Review 3
 
 | Tasks                               | Status |
 |-------------------------------------|--------|
-| Suitable unit tests defined.        |        |
+| Suitable unit tests defined.        | Done   |
 | Suitable integration tests defined. | Done   |
 | Tests running on GitHub Actions.    | Done   |
 | Graded submission.                  | Done   |
