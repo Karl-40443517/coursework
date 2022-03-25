@@ -18,20 +18,43 @@ public class App {
             a.connect(args[0], Integer.parseInt(args[1]));
 
         //Creates CountryReports objects and connects it to the world database
-        CountryReports CR = new CountryReports();
-        CR.setConnection(a.con);
+        CountryReports countryReports = new CountryReports();
+        countryReports.setConnection(a.con);
 
         //Countries In order of largest to smallest population for the following locations: world, a continent , a region
         //https://github.com/Karl-40443517/coursework/issues/5
-        CR.countryPopulationsForWorld();
-        CR.countryPopulationsForAContinent("Africa");
-        CR.countryPopulationsForARegion("Central Africa");
+        countryReports.countryPopulationsForWorld();
+        countryReports.countryPopulationsForAContinent("Africa");
+        countryReports.countryPopulationsForARegion("Central Africa");
 
         //Top N populated countries for the following locations: world, a continent , a region
         //https://github.com/Karl-40443517/coursework/issues/4
-        CR.topNCountryPopulationsForWorld(a.validateN(n));
-        CR.topNCountryPopulationsForAContinent(a.validateN(n), "Africa");
-        CR.topNCountryPopulationsForARegion(a.validateN(n),"Central Africa");
+        countryReports.topNCountryPopulationsForWorld(a.validateN(n));
+        countryReports.topNCountryPopulationsForAContinent(a.validateN(n), "Africa");
+        countryReports.topNCountryPopulationsForARegion(a.validateN(n),"Central Africa");
+
+
+
+        //Creates CityReports objects and connects it to the world database
+        CityReports cityReports = new CityReports();
+        cityReports.setConnection(a.con);
+
+        //https://github.com/Karl-40443517/coursework/issues/3
+        //Cities In order of largest to smallest population for the following locations: world, a continent , a region, a country, a district
+        cityReports.descendingCityWorldPop();
+        cityReports.descendingCityContinentPop("Africa");
+        cityReports.descendingCityRegionPop("Central Africa");
+        cityReports.descendingCityCountryPop("Angola");
+        cityReports.descendingCityDistrictPop("Benguela");
+
+        //https://github.com/Karl-40443517/coursework/issues/6
+        //Top N populated cities for the following locations: world, a continent , a region, a country, a district
+        cityReports.topPopulatedCityWorld(n);
+        cityReports.topPopulatedCityContinent(n,"Africa");
+        cityReports.topPopulatedCityRegion(n,"Central Africa");
+        cityReports.topPopulatedCityCountry(n, "Angola");
+        cityReports.topPopulatedCityDistrict(n,"Benguela");
+
 
         //disconnects application from world database
         a.disconnect();

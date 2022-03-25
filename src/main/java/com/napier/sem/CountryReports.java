@@ -63,7 +63,8 @@ public class CountryReports {
             Statement stmt = this.con.createStatement();
             ResultSet resultSet = stmt.executeQuery(strSelect);
 
-            if (resultSet.getFetchSize() == 0) System.out.println("Couldn't find countries in " + type + " in world DB");
+            if (resultSet.first() == false) System.out.println("Couldn't find countries in " + type + " in world DB");
+            resultSet.beforeFirst();
 
             while(resultSet.next())
                 System.out.println(resultSet.getString("code") + ", " + resultSet.getString("name") + ", " + resultSet.getString("continent") + resultSet.getString("region") + ", " + resultSet.getInt("population") + ", " + resultSet.getInt("capital"));
