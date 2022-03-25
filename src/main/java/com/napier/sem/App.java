@@ -49,11 +49,11 @@ public class App {
 
         //https://github.com/Karl-40443517/coursework/issues/6
         //Top N populated cities for the following locations: world, a continent , a region, a country, a district
-        cityReports.topPopulatedCityWorld(n);
-        cityReports.topPopulatedCityContinent(n,"Africa");
-        cityReports.topPopulatedCityRegion(n,"Central Africa");
-        cityReports.topPopulatedCityCountry(n, "Angola");
-        cityReports.topPopulatedCityDistrict(n,"Benguela");
+        cityReports.topPopulatedCityWorld(a.validateN(n));
+        cityReports.topPopulatedCityContinent(a.validateN(n),"Africa");
+        cityReports.topPopulatedCityRegion(a.validateN(n),"Central Africa");
+        cityReports.topPopulatedCityCountry(a.validateN(n), "Angola");
+        cityReports.topPopulatedCityDistrict(a.validateN(n),"Benguela");
 
 
         //disconnects application from world database

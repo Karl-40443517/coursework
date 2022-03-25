@@ -2,62 +2,61 @@ package com.napier.sem;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
-
-import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class IntegrationTests
 {
     static App a;
-    static CountryReports CR;
+    static CountryReports countryReports;
+    static CityReports cityReports;
 
     @BeforeAll
     static void init()
     {
         a = new App();
         a.connect("localhost:33060", 30000);
-        CR = new CountryReports();
-        CR.setConnection(a.con);
+        countryReports = new CountryReports();
+        countryReports.setConnection(a.con);
+
+        cityReports = new CityReports();
+        cityReports.setConnection(a.con);
     }
 
-    @Test
+    @Test //Tests an invalid Continent input
     void testCountryReportInvalidContinent()
     {
-        CR.countryPopulationsForAContinent("Africccca");
+        countryReports.countryPopulationsForAContinent("Africccca");
     }
 
-    @Test
+    @Test //Tests an invalid region input
     void testCountryReportInvalidRegion()
     {
-        CR.countryPopulationsForARegion("Central Africaaaa");
+        countryReports.countryPopulationsForARegion("Central Africaaaa");
     }
 
-    @Test
-    void testTopNCountryReportInvalidContinent()
-    {
-        CR.countryPopulationsForAContinent("Africccca");
-    }
 
-    @Test
-    void testTopNCountryReportInvalidRegion()
-    {
-        CR.countryPopulationsForARegion("Central Africaaaa");
-    }
-
-    @Test
+    @Test //Tests a report with a negative N input with a valid Continent
     void testCountryReportContinentNegativeN()
     {
-        CR.topNCountryPopulationsForAContinent(a.validateN(-10), "Africa");
+        countryReports.topNCountryPopulationsForAContinent(a.validateN(-10), "Africa");
     }
 
-    @Test
+    @Test //Tests a report with a negative N with an invalid region
     void testCountryReportRegionNegativeN()
     {
-        CR.topNCountryPopulationsForARegion(a.validateN(-10),"Central Africa");
+        countryReports.topNCountryPopulationsForARegion(a.validateN(-5),"sfsfsf Africa");
     }
 
+    @Test //Tests a country name to ID conversion
+    void testGetCountryIDFromName()
+    {
+        assertEquals("AGO",cityReports.getCountryIDFromName("Angola"));
+    }
 
+    @Test //Tests a country ID to name conversion
+    void testGetCountryNameFromID()
+    {
+        assertEquals("Angola",cityReports.getCountryNameFromID("AGO"));
+    }
 
 }
