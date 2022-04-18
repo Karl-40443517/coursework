@@ -2,7 +2,7 @@
 
 ![Read Me](https://github.com/<Karl-40443517>/<Coursework>README.md/badge.svg)
 
-[![LICENSE](https://img.shields.io/github/license/<github-username>/sem.svg?style=flat-square)](https://github.com/<github-username>/sem/blob/master/LICENSE)
+[![LICENSE](https://img.shields.io/github/license/<Karl-40443517>/sem.svg?style=flat-square)](https://github.com/<Karl-40443517>/coursework/master/LICENSE)
 
 Zube Link: https://zube.io/group-coursework/group-coursework/w/workspace-1/kanban
 
