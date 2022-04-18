@@ -1,6 +1,6 @@
 **Group Coursework**
 
-![workflow](https://github.com/<UserName>/<RepositoryName>/actions/workflows/main.yml/badge.svg)
+![Read Me](https://github.com/<UserName>/<RepositoryName>/actions/workflows/main.yml/badge.svg)
 
 Zube Link: https://zube.io/group-coursework/group-coursework/w/workspace-1/kanban
 
