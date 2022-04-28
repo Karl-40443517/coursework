@@ -4,7 +4,7 @@
 
 [![LICENSE](https://img.shields.io/github/license/JBLACK2889/sem.svg?style=flat-square)](https://github.com/JBLACK2889/sem/blob/master/LICENSE)
 
-
+[![Releases](https://img.shields.io/github/release/JBLACK2889/sem/all.svg?style=flat-square)](https://github.com/JBLACK2889/sem/releases)
 
 Zube Link: https://zube.io/group-coursework/group-coursework/w/workspace-1/kanban
 
