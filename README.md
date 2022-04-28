@@ -1,6 +1,7 @@
 **Group Coursework**
 
 ![Read Me](https://github.com/Karl-40443517/Coursework/README.md/badge.svg)
+![workflow](https://github.com/<UserName>/<RepositoryName>/actions/workflows/main.yml/badge.svg)
 
 [![LICENSE](https://img.shields.io/github/license/Karl-40443517/sem.svg?style=flat-square)](https://github.com/Karl-40443517/coursework/master/LICENSE)
 
