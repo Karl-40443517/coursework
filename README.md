@@ -1,6 +1,6 @@
 **Group Coursework**
 
-![workflow](https://github.com/JBLACK2889/<RepositoryName>/actions/workflows/main.yml/badge.svg)
+![workflow](https://github.com/JBLACK2889/coursework/actions/workflows/main.yml/badge.svg)
 
 [![LICENSE](https://img.shields.io/github/license/JBLACK2889/sem.svg?style=flat-square)](https://github.com/JBLACK2889/sem/blob/master/LICENSE)
 
