@@ -62,41 +62,41 @@ Review 4
 
 **14/32 = 43.75% (Refer to "coursework/Documents/reports/" for the report data)**
 
-| Tasks                                                                                                 | Met   |
-|-------------------------------------------------------------------------------------------------------|-------|
-| All the countries in the world organised by largest population to smallest.                           | Done  |
-| All the countries in a continent organised by largest population to smallest.                         | Done  |
-| All the countries in a region organised by largest population to smallest.                            | Done  |
-| The top N populated countries in the world where N is provided by the user.                           | Done  |
-| The top N populated countries in a continent where N is provided by the user.                         | Done  |
-| The top N populated countries in a region where N is provided by the user.                            | Done  |
-| All the cities in a region organised by largest population to smallest.                               | Done  |
-| All the cities in a country organised by largest population to smallest.                              | Done  |
-| All the cities in a district organised by largest population to smallest.                             | Done  |
-| The top N populated cities in the world where N is provided by the user.                              | Done  |
-| The top N populated cities in a continent where N is provided by the user.                            | Done  |
-| The top N populated cities in a region where N is provided by the user.                               | Done  |
-| The top N populated cities in a country where N is provided by the user.                              | Done  |
-| The top N populated cities in a district where N is provided by the user.                             | Done  |
-| All the capital cities in the world organised by largest population to smallest.                      | No    |
-| All the capital cities in a continent organised by largest population to smallest.                    | No    |
-| All the capital cities in a region organised by largest to smallest.                                  | No    |
-| The top N populated capital cities in the world where N is provided by the user.                      | No    |
-| The top N populated capital cities in a continent where N is provided by the user.                    | No    |
-| The top N populated capital cities in a region where N is provided by the user.                       | No    |
-| The population of people, people living in cities, and people not living in cities in each continent. | No    |
-| The population of people, people living in cities, and people not living in cities in each region.    | No    |
-| The population of people, people living in cities, and people not living in cities in each country.   | No    |
-| The population of the world.                                                                          | No    |
-| The population of a continent.                                                                        | No    |
-| The population of a region.                                                                           | No    |
-| The population of a country.                                                                          | No    |
-| The population of a city.                                                                             | No    |
-| The population of a district.                                                                         | No    |
-| number of people who speak Chinese from greatest number to smallest                                   | No    |
-| number of people who speak English from greatest number to smallest                                   | No    |
-| number of people who speak Hindi from greatest number to smallest                                     | No    |
-| number of people who speak Spanish from greatest number to smallest                                   | No    |
-| number of people who speak Arabic from greatest number to smallest                                    | No    |
+| ID  | Tasks                                                                                                 | Met     |
+|-----|-------------------------------------------------------------------------------------------------------|---------|
+| 1   | All the countries in the world organised by largest population to smallest.                           | Done    |
+| 2   | All the countries in a continent organised by largest population to smallest.                         | Done    |
+| 3   | All the countries in a region organised by largest population to smallest.                            | Done    |
+| 4   | The top N populated countries in the world where N is provided by the user.                           | Done    |
+| 5   | The top N populated countries in a continent where N is provided by the user.                         | Done    |
+| 6   | The top N populated countries in a region w  here N is provided by the user.                          | Done    |
+| 7   | All the cities in a region organised by largest population to smallest.                               | Done    |
+| 8   | All the cities in a country organised by largest population to smallest.                              | Done    |
+| 9   | All the cities in a district organised by largest population to smallest.                             | Done    |
+| 10  | The top N populated cities in the world where N is provided by the user.                              | Done    |
+| 11  | The top N populated cities in a continent where N is provided by the user.                            | Done    |
+| 12  | The top N populated cities in a region where N is provided by the user.                               | Done    |
+| 13  | The top N populated cities in a country where N is provided by the user.                              | Done    |
+| 14  | The top N populated cities in a district where N is provided by the user.                             | Done    |
+| 15  | All the capital cities in the world organised by largest population to smallest.                      | No      |
+| 16  | All the capital cities in a continent organised by largest population to smallest.                    | No      |
+| 17  | All the capital cities in a region organised by largest to smallest.                                  | No      |
+| 18  | The top N populated capital cities in the world where N is provided by the user.                      | No      |
+| 19  | The top N populated capital cities in a continent where N is provided by the user.                    | No      |
+| 20  | The top N populated capital cities in a region where N is provided by the user.                       | No      |
+| 21  | The population of people, people living in cities, and people not living in cities in each continent. | No      |
+| 12  | The population of people, people living in cities, and people not living in cities in each region.    | No      |
+| 23  | The population of people, people living in cities, and people not living in cities in each country.   | No      |
+| 24  | The population of the world.                                                                          | No      |
+| 25  | The population of a continent.                                                                        | No      |
+| 26  | The population of a region.                                                                           | No      |
+| 27  | The population of a country.                                                                          | No      |
+| 28  | The population of a city.                                                                             | No      |
+| 29  | The population of a district.                                                                         | No      |
+| 30  | number of people who speak Chinese from greatest number to smallest                                   | No      |
+| 31  | number of people who speak English from greatest number to smallest                                   | No      |
+| 32  | number of people who speak Hindi from greatest number to smallest                                     | No      |
+| 33  | number of people who speak Spanish from greatest number to smallest                                   | No      |
+| 34  | number of people who speak Arabic from greatest number to smallest                                    | No      |
 
 
