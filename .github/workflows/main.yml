@@ -71,5 +71,3 @@ jobs:
           automatic_release_tag: "latest"
           files: |
             ./target/*.jar
-      - name: Copy Output
-        run: docker container cp sem_employees_app_1:./tmp/reports ./
