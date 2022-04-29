@@ -1,5 +1,9 @@
 package com.napier.sem;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -7,6 +11,16 @@ import java.sql.Statement;
 public class CityReports {
 
     public Connection con = null;
+
+    BufferedWriter writer;
+
+    {
+        try {
+            writer = new BufferedWriter(new FileWriter(new File("./Documents/reports/City Reports.md")));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     //Sets database connection
     void setConnection(Connection con) {
@@ -21,8 +35,8 @@ public class CityReports {
                             + "FROM city "
                             + "ORDER BY Population DESC";
 
-            System.out.println("\nDescending order of country populations in the world");
-        this.produceReport(strSelect, "the world");
+            String title = "\nDescending order of city populations in the world";
+        this.produceReport(strSelect, "the world", title);
 
     }
 
@@ -36,8 +50,8 @@ public class CityReports {
                             + "ORDER BY city.Population DESC";
 
 
-            System.out.println("\nDescending order of city populations in " + continent);
-        this.produceReport(strSelect, continent);
+        String title = "\nDescending order of city populations in " + continent;
+        this.produceReport(strSelect, continent, title);
     }
 
     //Prints city populations in a given region from largest to smallest
@@ -50,8 +64,8 @@ public class CityReports {
                             + "ORDER BY city.Population DESC";
 
 
-            System.out.println("\nDescending order of city populations in the " + region);
-        this.produceReport(strSelect, region);
+        String title = "\nDescending order of city populations in the " + region;
+        this.produceReport(strSelect, region, title);
     }
 
     //Prints city populations in a given country from largest to smallest
@@ -64,8 +78,8 @@ public class CityReports {
                             + "WHERE CountryCode=" + "'"+ getCountryIDFromName(country) + "'"
                             + "ORDER BY Population DESC ";
 
-            System.out.println("\nDescending order of city populations in " + country);
-        this.produceReport(strSelect, country);
+        String title = "\nDescending order of city populations in " + country;
+        this.produceReport(strSelect, country, title);
     }
 
     //Prints city populations in a given district from largest to smallest
@@ -78,8 +92,8 @@ public class CityReports {
                             + "WHERE District=" + "'" + district + "'"
                             + "ORDER BY Population DESC";
 
-            System.out.println("\nDescending order of city populations in the " + district);
-        this.produceReport(strSelect, district);
+        String title = "\nDescending order of city populations in the " + district;
+        this.produceReport(strSelect, district, title);
     }
 
     //Prints top populated cities in a given limit
@@ -91,8 +105,8 @@ public class CityReports {
                             + "ORDER BY Population DESC "
                             + "LIMIT " + n;
 
-            System.out.println("\n Top " + n + " populated cities in the world");
-        this.produceReport(strSelect, "the world");
+        String title = "\n Top " + n + " populated cities in the world";
+        this.produceReport(strSelect, "the world", title);
     }
 
     //Prints top populated cities in a given limit within a continent
@@ -107,8 +121,8 @@ public class CityReports {
                             + "ORDER BY city.Population DESC "
                             + "LIMIT " + n;
 
-            System.out.println("\nTop " + n + " populated cities in " + continent);
-        this.produceReport(strSelect, continent);
+        String title = "\nTop " + n + " populated cities in " + continent;
+        this.produceReport(strSelect, continent, title);
 
     }
 
@@ -123,8 +137,8 @@ public class CityReports {
                             + "ORDER BY city.Population DESC "
                             + "LIMIT " + n;
 
-            System.out.println("\nTop " + n + " populated cities in " + region);
-        this.produceReport(strSelect, region);
+        String title = "\nTop " + n + " populated cities in " + region;
+        this.produceReport(strSelect, region, title);
 
     }
 
@@ -137,8 +151,8 @@ public class CityReports {
                             + "WHERE CountryCode=" + "'"+ getCountryIDFromName(country) + "'"
                             + "ORDER BY Population DESC "
                             + "LIMIT " + n;
-            System.out.println("\nTop " + n + " populated cities in " + country);
-            this.produceReport(strSelect, country);
+        String title = "\nTop " + n + " populated cities in " + country;
+            this.produceReport(strSelect, country, title);
 
     }
 
@@ -153,25 +167,34 @@ public class CityReports {
                             + "ORDER BY Population DESC "
                             + "LIMIT " + n;
 
-            System.out.println("\nTop " + n + " populated cities in " + district);
-            this.produceReport(strSelect, district);
+        String title = "\nTop " + n + " populated cities in " + district;
+            this.produceReport(strSelect, district, title);
 
 
     }
 
 
     //Produces a Country Report by executing an SQL query and then printing the results/appropriate error message to console
-    void produceReport(String strSelect, String type) {
+    void produceReport(String strSelect, String type, String title) {
         try {
             Statement stmt = this.con.createStatement();
             ResultSet resultSet = stmt.executeQuery(strSelect);
+            StringBuilder sb = new StringBuilder();
+
+
 
             if (resultSet.first() == false) System.out.println("Couldn't find cities in " + type + " in world DB");
             resultSet.beforeFirst();
 
-            while(resultSet.next()) System.out.println(resultSet.getString("name") + ", " + getCountryNameFromID(resultSet.getString("CountryCode")) + ", " + resultSet.getString("district") + ", " + resultSet.getString("population"));
+            sb.append(title.toString() + "\n");
+            System.out.println(title.toString());
 
+            while(resultSet.next()) {
+                System.out.println(resultSet.getString("name") + ", " + getCountryNameFromID(resultSet.getString("CountryCode")) + ", " + resultSet.getString("district") + ", " + resultSet.getString("population") );
+                sb.append(resultSet.getString("name") + ", " + getCountryNameFromID(resultSet.getString("CountryCode")) + ", " + resultSet.getString("district") + ", " + resultSet.getString("population")+ "\n");
+            }
 
+            writer.write(sb.toString());
 
 
 

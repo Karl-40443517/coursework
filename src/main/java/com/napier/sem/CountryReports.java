@@ -83,7 +83,12 @@ public class CountryReports {
 
 
             sb.append(title.toString() + "\n");
-            while(resultSet.next()) sb.append(resultSet.getString("code") + ", " + resultSet.getString("name") + ", " + resultSet.getString("continent") + resultSet.getString("region") + ", " + resultSet.getInt("population") + ", " + resultSet.getInt("capital") + "\n");
+            System.out.println(title.toString());
+
+            while(resultSet.next()) {
+                sb.append(resultSet.getString("code") + ", " + resultSet.getString("name") + ", " + resultSet.getString("continent") + resultSet.getString("region") + ", " + resultSet.getInt("population") + ", " + resultSet.getInt("capital") + "\n");
+                System.out.println(resultSet.getString("code") + ", " + resultSet.getString("name") + ", " + resultSet.getString("continent") + resultSet.getString("region") + ", " + resultSet.getInt("population") + ", " + resultSet.getInt("capital"));
+            }
 
             writer.write(sb.toString());
             //writer.close();

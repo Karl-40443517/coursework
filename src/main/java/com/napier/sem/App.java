@@ -24,13 +24,6 @@ public class App {
         //Creates CountryReports objects and connects it to the world database
         CountryReports countryReports = new CountryReports();
         countryReports.setConnection(a.con);
-        new File("./Documents/reports/Country Report.md").mkdir();
-
-        //Countries In order of largest to smallest population for the following locations: world, a continent , a region
-        //https://github.com/Karl-40443517/coursework/issues/5
-        countryReports.countryPopulationsForWorld();
-        countryReports.countryPopulationsForAContinent("Africa");
-        countryReports.countryPopulationsForARegion("Central Africa");
 
         //Top N populated countries for the following locations: world, a continent , a region
         //https://github.com/Karl-40443517/coursework/issues/4
@@ -38,19 +31,17 @@ public class App {
         countryReports.topNCountryPopulationsForAContinent(a.validateN(n), "Africa");
         countryReports.topNCountryPopulationsForARegion(a.validateN(n),"Central Africa");
 
+        //Countries In order of largest to smallest population for the following locations: world, a continent , a region
+        //https://github.com/Karl-40443517/coursework/issues/5
+        countryReports.countryPopulationsForAContinent("Africa");
+        countryReports.countryPopulationsForARegion("Central Africa");
+        countryReports.countryPopulationsForWorld();
+
 
 
         //Creates CityReports objects and connects it to the world database
         CityReports cityReports = new CityReports();
         cityReports.setConnection(a.con);
-
-        //https://github.com/Karl-40443517/coursework/issues/3
-        //Cities In order of largest to smallest population for the following locations: world, a continent , a region, a country, a district
-        cityReports.descendingCityWorldPop();
-        cityReports.descendingCityContinentPop("Africa");
-        cityReports.descendingCityRegionPop("Central Africa");
-        cityReports.descendingCityCountryPop("Angola");
-        cityReports.descendingCityDistrictPop("Benguela");
 
         //https://github.com/Karl-40443517/coursework/issues/6
         //Top N populated cities for the following locations: world, a continent , a region, a country, a district
@@ -59,6 +50,16 @@ public class App {
         cityReports.topPopulatedCityRegion(a.validateN(n),"Central Africa");
         cityReports.topPopulatedCityCountry(a.validateN(n), "Angola");
         cityReports.topPopulatedCityDistrict(a.validateN(n),"Benguela");
+
+        //https://github.com/Karl-40443517/coursework/issues/3
+        //Cities In order of largest to smallest population for the following locations: world, a continent , a region, a country, a district
+        cityReports.descendingCityContinentPop("Africa");
+        cityReports.descendingCityRegionPop("Central Africa");
+        cityReports.descendingCityCountryPop("Angola");
+        cityReports.descendingCityDistrictPop("Benguela");
+        cityReports.descendingCityWorldPop();
+
+
 
 
         //disconnects application from world database

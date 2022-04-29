@@ -52,6 +52,46 @@ Review 4
 
 | Tasks                               | Status |
 |-------------------------------------|--------|
-| Deployment working                  | Almost |
+| Deployment working                  | Done   |
 | Bug reporting system                | Done   |
+
+
+
+
+<br/>
+
+**14/32 = 43.75**
+
+| Tasks                                                                                                 | Met   |
+|-------------------------------------------------------------------------------------------------------|-------|
+| All the countries in the world organised by largest population to smallest.                           | Done  |
+| All the countries in a continent organised by largest population to smallest.                         | Done  |
+| All the countries in a region organised by largest population to smallest.                            | Done  |
+| The top N populated countries in the world where N is provided by the user.                           | Done  |
+| The top N populated countries in a continent where N is provided by the user.                         | Done  |
+| The top N populated countries in a region where N is provided by the user.                            | Done  |
+| All the cities in a region organised by largest population to smallest.                               | Done  |
+| All the cities in a country organised by largest population to smallest.                              | Done  |
+| All the cities in a district organised by largest population to smallest.                             | Done  |
+| The top N populated cities in the world where N is provided by the user.                              | Done  |
+| The top N populated cities in a continent where N is provided by the user.                            | Done  |
+| The top N populated cities in a region where N is provided by the user.                               | Done  |
+| The top N populated cities in a country where N is provided by the user.                              | Done  |
+| The top N populated cities in a district where N is provided by the user.                             | Done  |
+| All the capital cities in the world organised by largest population to smallest.                      | No    |
+| All the capital cities in a continent organised by largest population to smallest.                    | No    |
+| All the capital cities in a region organised by largest to smallest.                                  | No    |
+| The top N populated capital cities in the world where N is provided by the user.                      | No    |
+| The top N populated capital cities in a continent where N is provided by the user.                    | No    |
+| The top N populated capital cities in a region where N is provided by the user.                       | No    |
+| The population of people, people living in cities, and people not living in cities in each continent. | No    |
+| The population of people, people living in cities, and people not living in cities in each region.    | No    |
+| The population of people, people living in cities, and people not living in cities in each country.   | No    |
+| The population of the world.                                                                          | No    |
+| The population of a continent.                                                                        | No    |
+| The population of a region.                                                                           | No    |
+| The population of a country.                                                                          | No    |
+| The population of a city.                                                                             | No    |
+| The population of a district.                                                                         | No    |
+
 
