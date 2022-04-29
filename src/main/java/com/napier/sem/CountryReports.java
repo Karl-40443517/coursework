@@ -13,7 +13,6 @@ public class CountryReports {
     public Connection con = null;
     public BufferedWriter writer;
 
-
     {
         try {
             writer = new BufferedWriter(new FileWriter(new File("./Documents/reports/" + "Country Reports.md")));
