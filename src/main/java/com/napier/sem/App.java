@@ -24,7 +24,7 @@ public class App {
         //Creates CountryReports objects and connects it to the world database
         CountryReports countryReports = new CountryReports();
         countryReports.setConnection(a.con);
-        new File("./Documents/reports/").mkdir();
+        new File("./Documents/reports/Country Report.md").mkdir();
 
         //Countries In order of largest to smallest population for the following locations: world, a continent , a region
         //https://github.com/Karl-40443517/coursework/issues/5
