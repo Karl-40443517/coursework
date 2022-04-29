@@ -53,5 +53,5 @@ Review 4
 | Tasks                               | Status |
 |-------------------------------------|--------|
 | Deployment working                  | Almost |
-| Bug reporting system                |        |
+| Bug reporting system                | Done   |
 
