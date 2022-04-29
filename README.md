@@ -60,7 +60,7 @@ Review 4
 
 <br/>
 
-**14/32 = 43.75**
+**14/32 = 43.75% (Refer to "coursework/Documents/reports/" for the report data)**
 
 | Tasks                                                                                                 | Met   |
 |-------------------------------------------------------------------------------------------------------|-------|
@@ -93,5 +93,10 @@ Review 4
 | The population of a country.                                                                          | No    |
 | The population of a city.                                                                             | No    |
 | The population of a district.                                                                         | No    |
+| number of people who speak Chinese from greatest number to smallest                                   | No    |
+| number of people who speak English from greatest number to smallest                                   | No    |
+| number of people who speak Hindi from greatest number to smallest                                     | No    |
+| number of people who speak Spanish from greatest number to smallest                                   | No    |
+| number of people who speak Arabic from greatest number to smallest                                    | No    |
 
 

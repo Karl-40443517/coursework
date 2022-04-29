@@ -82,7 +82,7 @@ public class CountryReports {
             resultSet.beforeFirst();
 
 
-            sb.append(title.toString() + "<br />");
+            sb.append("<br />" + title.toString() + "<br />");
             System.out.println(title.toString());
 
             while(resultSet.next()) {

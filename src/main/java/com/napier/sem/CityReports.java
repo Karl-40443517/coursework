@@ -186,7 +186,7 @@ public class CityReports {
             if (resultSet.first() == false) System.out.println("Couldn't find cities in " + type + " in world DB");
             resultSet.beforeFirst();
 
-            sb.append(title.toString() + "<br />");
+            sb.append("<br />" + title.toString() + "<br />");
             System.out.println(title.toString());
 
             while(resultSet.next()) {
